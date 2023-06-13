@@ -1,0 +1,762 @@
+{
+  "name": "Font_Default",
+  "color": "#00000000",
+  "double_sided_gl": false,
+  "enable_instancing": false,
+  "global_illumination_flags": "EmissiveIsBlack",
+  "pass_count": 1,
+  "render_queue": 3000,
+  "shader_keywords": [],
+  "shader": {
+    "name": "TextMeshPro/Distance Field",
+    "pass_count": 1,
+    "render_queue": 3000,
+    "is_supported": true,
+    "maximum_lod": -1,
+    "properties": [
+      {
+        "name": "_FaceTex",
+        "id": 353,
+        "description": "Face Texture",
+        "flags": "None",
+        "type": "Texture",
+        "default_value": {
+          "texture": "white",
+          "dimension": "Tex2D"
+        },
+        "value": null,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_FaceUVSpeedX",
+        "id": 366,
+        "description": "Face UV Speed X",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-5,5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_FaceUVSpeedY",
+        "id": 367,
+        "description": "Face UV Speed Y",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-5,5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_FaceColor",
+        "id": 406,
+        "description": "Face Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#ffffff",
+        "value": "#ffffff",
+        "attributes": []
+      },
+      {
+        "name": "_FaceDilate",
+        "id": 365,
+        "description": "Face Dilate",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_OutlineColor",
+        "id": 409,
+        "description": "Outline Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#000000",
+        "value": "#000000",
+        "attributes": []
+      },
+      {
+        "name": "_OutlineTex",
+        "id": 354,
+        "description": "Outline Texture",
+        "flags": "None",
+        "type": "Texture",
+        "default_value": {
+          "texture": "white",
+          "dimension": "Tex2D"
+        },
+        "value": null,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_OutlineUVSpeedX",
+        "id": 377,
+        "description": "Outline UV Speed X",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-5,5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_OutlineUVSpeedY",
+        "id": 378,
+        "description": "Outline UV Speed Y",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-5,5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_OutlineWidth",
+        "id": 379,
+        "description": "Outline Thickness",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_OutlineSoftness",
+        "id": 376,
+        "description": "Outline Softness",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_Bevel",
+        "id": 356,
+        "description": "Bevel",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.5,
+        "value_range": [0,1],
+        "value": 0.5,
+        "attributes": []
+      },
+      {
+        "name": "_BevelOffset",
+        "id": 358,
+        "description": "Bevel Offset",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-0.5,0.5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_BevelWidth",
+        "id": 360,
+        "description": "Bevel Width",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-0.5,0.5],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_BevelClamp",
+        "id": 357,
+        "description": "Bevel Clamp",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_BevelRoundness",
+        "id": 359,
+        "description": "Bevel Roundness",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_LightAngle",
+        "id": 373,
+        "description": "Light Angle",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 3.14159989,
+        "value_range": [0,6.28318548],
+        "value": 3.14159989,
+        "attributes": []
+      },
+      {
+        "name": "_SpecularColor",
+        "id": 412,
+        "description": "Specular",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#ffffff",
+        "value": "#ffffff",
+        "attributes": []
+      },
+      {
+        "name": "_SpecularPower",
+        "id": 389,
+        "description": "Specular",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 2,
+        "value_range": [0,4],
+        "value": 2,
+        "attributes": []
+      },
+      {
+        "name": "_Reflectivity",
+        "id": 381,
+        "description": "Reflectivity",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 10,
+        "value_range": [5,15],
+        "value": 10,
+        "attributes": []
+      },
+      {
+        "name": "_Diffuse",
+        "id": 364,
+        "description": "Diffuse",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.5,
+        "value_range": [0,1],
+        "value": 0.5,
+        "attributes": []
+      },
+      {
+        "name": "_Ambient",
+        "id": 355,
+        "description": "Ambient",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.5,
+        "value_range": [1,0],
+        "value": 0.5,
+        "attributes": []
+      },
+      {
+        "name": "_BumpMap",
+        "id": 267,
+        "description": "Normal map",
+        "flags": "None",
+        "type": "Texture",
+        "default_value": {
+          "texture": "bump",
+          "dimension": "Tex2D"
+        },
+        "value": null,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_BumpOutline",
+        "id": 362,
+        "description": "Bump Outline",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_BumpFace",
+        "id": 361,
+        "description": "Bump Face",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_ReflectFaceColor",
+        "id": 410,
+        "description": "Reflection Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#000000",
+        "value": "#000000",
+        "attributes": []
+      },
+      {
+        "name": "_ReflectOutlineColor",
+        "id": 411,
+        "description": "Reflection Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#000000",
+        "value": "#000000",
+        "attributes": []
+      },
+      {
+        "name": "_Cube",
+        "id": 352,
+        "description": "Reflection Cubemap",
+        "flags": "None",
+        "type": "Texture",
+        "default_value": {
+          "texture": "black",
+          "dimension": "Cube"
+        },
+        "value": null,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_EnvMatrixRotation",
+        "id": 405,
+        "description": "Texture Rotation",
+        "flags": "None",
+        "type": "Vector",
+        "default_value": [0,0,0,0],
+        "value": [0,0,0,0],
+        "attributes": []
+      },
+      {
+        "name": "_UnderlayColor",
+        "id": 413,
+        "description": "Border Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#00000080",
+        "value": "#00000080",
+        "attributes": []
+      },
+      {
+        "name": "_UnderlayOffsetX",
+        "id": 398,
+        "description": "Border OffsetX",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_UnderlayOffsetY",
+        "id": 399,
+        "description": "Border OffsetY",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_UnderlayDilate",
+        "id": 397,
+        "description": "Border Dilate",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_UnderlaySoftness",
+        "id": 400,
+        "description": "Border Softness",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [0,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_GlowColor",
+        "id": 407,
+        "description": "Color",
+        "flags": "None",
+        "type": "Color",
+        "default_value": "#00ff0080",
+        "value": "#00ff0080",
+        "attributes": []
+      },
+      {
+        "name": "_GlowOffset",
+        "id": 369,
+        "description": "Offset",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_GlowInner",
+        "id": 368,
+        "description": "Inner",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.0500000007,
+        "value_range": [0,1],
+        "value": 0.0500000007,
+        "attributes": []
+      },
+      {
+        "name": "_GlowOuter",
+        "id": 370,
+        "description": "Outer",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.0500000007,
+        "value_range": [0,1],
+        "value": 0.0500000007,
+        "attributes": []
+      },
+      {
+        "name": "_GlowPower",
+        "id": 371,
+        "description": "Falloff",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.75,
+        "value_range": [1,0],
+        "value": 0.75,
+        "attributes": []
+      },
+      {
+        "name": "_WeightNormal",
+        "id": 404,
+        "description": "Weight Normal",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_WeightBold",
+        "id": 403,
+        "description": "Weight Bold",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0.5,
+        "value": 0.200000003,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_ShaderFlags",
+        "id": 387,
+        "description": "Flags",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_ScaleRatioA",
+        "id": 382,
+        "description": "Scale RatioA",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 1,
+        "value": 0.975609779,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_ScaleRatioB",
+        "id": 383,
+        "description": "Scale RatioB",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 1,
+        "value": 0.926829278,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_ScaleRatioC",
+        "id": 384,
+        "description": "Scale RatioC",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 1,
+        "value": 0.926829278,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_MainTex",
+        "id": 4,
+        "description": "Font Atlas",
+        "flags": "None",
+        "type": "Texture",
+        "default_value": {
+          "texture": "white",
+          "dimension": "Tex2D"
+        },
+        "value": {
+          "texture": "LiberationSans Atlas",
+          "dimension": "Tex2D",
+          "offset": [0,0],
+          "scale": [1,1]
+        },
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_TextureWidth",
+        "id": 396,
+        "description": "Texture Width",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 512,
+        "value": 2048,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_TextureHeight",
+        "id": 395,
+        "description": "Texture Height",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 512,
+        "value": 2048,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_GradientScale",
+        "id": 372,
+        "description": "Gradient Scale",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 5,
+        "value": 41,
+        "non_default": true,
+        "attributes": []
+      },
+      {
+        "name": "_ScaleX",
+        "id": 385,
+        "description": "Scale X",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 1,
+        "value": 1,
+        "attributes": []
+      },
+      {
+        "name": "_ScaleY",
+        "id": 386,
+        "description": "Scale Y",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 1,
+        "value": 1,
+        "attributes": []
+      },
+      {
+        "name": "_PerspectiveFilter",
+        "id": 380,
+        "description": "Perspective Correction",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0.875,
+        "value_range": [0,1],
+        "value": 0.875,
+        "attributes": []
+      },
+      {
+        "name": "_Sharpness",
+        "id": 388,
+        "description": "Sharpness",
+        "flags": "None",
+        "type": "Range",
+        "default_value": 0,
+        "value_range": [-1,1],
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_VertexOffsetX",
+        "id": 401,
+        "description": "Vertex OffsetX",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_VertexOffsetY",
+        "id": 402,
+        "description": "Vertex OffsetY",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_MaskCoord",
+        "id": 408,
+        "description": "Mask Coordinates",
+        "flags": "None",
+        "type": "Vector",
+        "default_value": [0,0,32767,32767],
+        "value": [0,0,32767,32767],
+        "attributes": []
+      },
+      {
+        "name": "_ClipRect",
+        "id": 12,
+        "description": "Clip Rect",
+        "flags": "None",
+        "type": "Vector",
+        "default_value": [-32767,-32767,32767,32767],
+        "value": [-32767,-32767,32767,32767],
+        "attributes": []
+      },
+      {
+        "name": "_MaskSoftnessX",
+        "id": 374,
+        "description": "Mask SoftnessX",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_MaskSoftnessY",
+        "id": 375,
+        "description": "Mask SoftnessY",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_StencilComp",
+        "id": 391,
+        "description": "Stencil Comparison",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 8,
+        "value": 8,
+        "attributes": []
+      },
+      {
+        "name": "_Stencil",
+        "id": 390,
+        "description": "Stencil ID",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_StencilOp",
+        "id": 392,
+        "description": "Stencil Operation",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 0,
+        "value": 0,
+        "attributes": []
+      },
+      {
+        "name": "_StencilWriteMask",
+        "id": 394,
+        "description": "Stencil Write Mask",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 255,
+        "value": 255,
+        "attributes": []
+      },
+      {
+        "name": "_StencilReadMask",
+        "id": 393,
+        "description": "Stencil Read Mask",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 255,
+        "value": 255,
+        "attributes": []
+      },
+      {
+        "name": "_ColorMask",
+        "id": 363,
+        "description": "Color Mask",
+        "flags": "None",
+        "type": "Float",
+        "default_value": 15,
+        "value": 15,
+        "attributes": []
+      }
+    ]
+  },
+  "main_texture": {
+    "offset": [0,0],
+    "scale": [1,1],
+    "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Unturned\\DevkitServer\\AssetExports\\UI\\Glazier_uGUI\\Font_Default\\Main Texture (LiberationSans Atlas).png"
+  },
+  "texture_properties": {
+    "_MainTex": {
+      "offset": [0,0],
+      "scale": [1,1],
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Unturned\\DevkitServer\\AssetExports\\UI\\Glazier_uGUI\\Font_Default\\Textures\\_MainTex (LiberationSans Atlas).png"
+    },
+    "_BumpMap": {
+      "offset": [0,0],
+      "scale": [1,1],
+      "path": null
+    },
+    "_Cube": {
+      "offset": [0,0],
+      "scale": [1,1],
+      "path": null
+    },
+    "_FaceTex": {
+      "offset": [0,0],
+      "scale": [1,1],
+      "path": null
+    },
+    "_OutlineTex": {
+      "offset": [0,0],
+      "scale": [1,1],
+      "path": null
+    }
+  }
+}
