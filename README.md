@@ -43,8 +43,8 @@ Tooltip labels are used for item tooltips and have the contrast `ETextContrastCo
 
 ### Text Colors `ESleekTint` (default settings, dark theme)
 RGB values are 0-1, not 0-255
-* Background: `RGB(0.9, 0.9, 0.9)`
-* Foreground: `RGB(0.9, 0.9, 0.9)`
+* Background: `RGB(0.9, 0.9, 0.9)` (note that even though this is almost white, the box uses a dark background so it just slightly lightens it)
+* Foreground: `RGB(0.9, 0.9, 0.9)` (same here)
 * Font: `RGB(0.9, 0.9, 0.9)`
 * Rich Text Default: `RGB(0.7, 0.7, 0.7)`
 * Bad: `RGB(0.75, 0.12, 0.12)`
