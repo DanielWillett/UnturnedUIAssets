@@ -24,8 +24,6 @@ There is unfortunately no way to get the value of a slider from the server, but 
 ## Scroll Views
 Scroll views let you create a scroll box. There is a disableable variant available.<br/>
 These are commonly used with a layout group (vertical or horizontal).<br/>
-To make them one-directional, delete the slider you don't want, then set the `Vertical/Horizontal Scrollbar` property of the one you deleted on the `ScrollBoxEx` component of the base element to `None`.<br/>
-You'll also have to adjust the height/width of the other scroll bar so that it goes all the way down or across.
 
 ## Labels
 
