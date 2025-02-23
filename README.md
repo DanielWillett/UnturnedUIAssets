@@ -67,10 +67,7 @@ Set the root element's text to set the actual value of the input field at run-ti
 Boxes are just panels that have the classic box background from unturned. You can put text, images, etc on them.
 
 ## Vanilla Canvases
-The canvases are available to mimic Unturned's scaling. This works... unless the player has changed their UI scaling.
-Beg Nelson for this if you want it to work properly.
-
-https://github.com/SmartlyDressedGames/Unturned-3.x-Community/discussions/3967
+The canvases are available to mimic Unturned's scaling. They auto-scale with your UI scale setting in-game.
 
 ## Images
 There are no differences between the Unity `Image` component and the Glazier image, so I did not include a custom image prefab.
