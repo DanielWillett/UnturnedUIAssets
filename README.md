@@ -1,10 +1,19 @@
 # UnturnedUIAssets
-Collection of all the icons used by the vanilla UI in Unturned. I do not own rights to these icons, they are property of SDG.
+Collection of all the icons used by the vanilla UI in Unturned.
+
+## Legal
+I do not own rights to these icons, they are the intellectual property of Smartly Dressed Games. I've [received permission](https://github.com/DanielWillett/UnturnedUIAssets/issues/1#issue-3029522441) by SDG to host this repository and continue to update. Content in this repository is subject to their End User License Agreement.
+
+## Plugin UI
 
 The main point of this is the images in `UI/uGUI/DarkTheme/` which should be used for Unity UI's going for the Unturned style.<br/>
 There is also a unity bundle at `UI/uGUI/DarkTheme/uGUI Assets.unitypackage` with vanilla UI prefabs.
 
 # Using the vanilla UI components
+
+Download this file: [uGUI Assets.unitypackage](https://github.com/DanielWillett/UnturnedUIAssets/blob/main/UI/uGUI/DarkTheme/uGUI%20Assets.unitypackage) and import it into a v2021.3.29f1 Unity Project.
+
+Use the right click menu to add components under the Add -> UI -> uGUI section.
 
 ![image](https://github.com/DanielWillett/UnturnedUIAssets/assets/12886600/e5045cf5-78dd-4bd1-bb95-d1bc2b4cb473)
 
