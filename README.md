@@ -2,7 +2,7 @@
 Collection of all the icons used by the vanilla UI in Unturned.
 
 ## Legal
-I do not own rights to these icons, they are the intellectual property of Smartly Dressed Games. I've [received permission](https://github.com/DanielWillett/UnturnedUIAssets/issues/1#issue-3029522441) by SDG to host this repository and continue to update it. Content in this repository is subject to their End User License Agreement.
+I do not own rights to these icons, they are the intellectual property of Smartly Dressed Games. I've [received permission](https://github.com/DanielWillett/UnturnedUIAssets/issues/1#issue-3029522441) by SDG to host this repository and continue to update it. Content in this repository is subject to their [End User License Agreement](https://store.steampowered.com/eula/304930_eula_1).
 
 ## Plugin UI
 
