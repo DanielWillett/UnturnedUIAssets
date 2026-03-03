@@ -11,7 +11,7 @@ There is also a unity bundle at `UI/uGUI/DarkTheme/uGUI Assets.unitypackage` wit
 
 # Using the vanilla UI components
 
-Download this file: [uGUI Assets.unitypackage](https://github.com/DanielWillett/UnturnedUIAssets/blob/main/UI/uGUI/DarkTheme/uGUI%20Assets.unitypackage) and import it into a v2021.3.29f1 Unity Project.
+Download this file: [uGUI Assets.unitypackage](https://github.com/DanielWillett/UnturnedUIAssets/blob/main/UI/uGUI/DarkTheme/uGUI%20Assets.unitypackage) and import it into a v2022.3.62f3 Unity Project.
 
 Use the right click menu to add components under the Add -> UI -> uGUI section.
 
