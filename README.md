@@ -78,5 +78,8 @@ Boxes are just panels that have the classic box background from unturned. You ca
 ## Vanilla Canvases
 The canvases are available to mimic Unturned's scaling. They auto-scale with your UI scale setting in-game.
 
+### Sort Order
+In vanilla, all UI is drawn with a sort order of `15`. The cursor is drawn at a sort order of `30000` and the loading screen is drawn at a sort order of `29000`. Higher numbers will be displayed above vanilla UI and lower numbers will be displayed below vanilla UI. The behavior for users using `-Glazier IMGUI` or `-Glazier UIToolkit` is undefined.
+
 ## Images
 There are no differences between the Unity `Image` component and the Glazier image, so I did not include a custom image prefab.
