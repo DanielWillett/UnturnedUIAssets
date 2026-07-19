@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System.Globalization;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace Assets.Editor
@@ -13,7 +15,8 @@ namespace Assets.Editor
          */
         private int count;
         private Vector2 offset;
-        
+        private bool dontAppendNewNumbers;
+        [UsedImplicitly]
         [MenuItem("Tools/Hierarchy Util")]
         private static void Open()
         {
@@ -27,7 +30,7 @@ namespace Assets.Editor
         {
             Selection.selectionChanged -= Repaint;
         }
-        public static void DuplicateObject(GameObject obj, int n, Vector2 offset = default)
+        public void DuplicateObject(GameObject obj, int n, Vector2 offset = default)
         {
             int offset2 = 0;
             string nOld = obj.name;
@@ -43,21 +46,38 @@ namespace Assets.Editor
             offset = new Vector2(offset.x, -offset.y);
             nOld = obj.name;
             splitLast = nOld.LastIndexOf('_');
+            Undo.SetCurrentGroupName($"Duplicate {obj.name} {n}x.");
             for (int i = 0; i < n; ++i)
             {
                 int index = i + offset2 + 1;
                 string name;
                 if (splitLast != -1 && int.TryParse(nOld.Substring(splitLast + 1), NumberStyles.Number, CultureInfo.InvariantCulture, out _))
                     name = nOld.Substring(0, splitLast + 1) + index;
-                else
+                else if (!dontAppendNewNumbers)
                     name = nOld + "_" + index;
+                else name = nOld;
                 if (obj.transform.parent != null)
                 {
                     Transform t = obj.transform.parent.Find(name);
                     if (t != null)
                         DestroyImmediate(t.gameObject);
                 }
-                GameObject @new = Instantiate(obj, obj.transform.parent, false);
+
+                int siblingIndex = obj.transform.GetSiblingIndex();
+                
+                GameObject @new;
+                if (PrefabUtility.IsAnyPrefabInstanceRoot(obj))
+                {
+                    string path = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(obj);
+                    Debug.Log($"Using prefab: \"{path}\".");
+                    @new = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(path), obj.transform.parent);
+                }
+                else
+                {
+                    @new = Instantiate(obj, obj.transform.parent, false);
+                }
+
+                @new.transform.SetSiblingIndex(siblingIndex + i + 1);
                 if (@new.TryGetComponent(out RectTransform t2))
                 {
                     t2.anchoredPosition = (i + 1) * offset + o1;
@@ -66,10 +86,14 @@ namespace Assets.Editor
                 @new.name = name;
                 PrefabUtility.RecordPrefabInstancePropertyModifications(@new);
                 RecursiveRenameChildren(@new, index);
+                PrefabStage prefabStage = PrefabStageUtility.GetCurrentPrefabStage();
+                if (prefabStage != null)
+                    EditorSceneManager.MarkSceneDirty(prefabStage.scene);
+                Undo.RegisterCreatedObjectUndo(@new, "Duplcated object: \"" + name + "\"");
             }
             Debug.Log("Cloned " + n + " object(s) and their children.");
         }
-        public static void RecursiveRenameChildren(GameObject obj, int index)
+        public void RecursiveRenameChildren(GameObject obj, int index)
         {
             int len = obj.transform.childCount;
             for (int i = 0; i < len; ++i)
@@ -79,13 +103,14 @@ namespace Assets.Editor
                 int splitLast = nOld.LastIndexOf('_');
                 if (splitLast != -1 && int.TryParse(nOld.Substring(splitLast + 1), NumberStyles.Number, CultureInfo.InvariantCulture, out _))
                     child.name = nOld.Substring(0, splitLast + 1) + index;
-                else
+                else if (!dontAppendNewNumbers)
                     child.name = nOld + "_" + index;
+                else child.name = nOld;
                 PrefabUtility.RecordPrefabInstancePropertyModifications(child);
                 RecursiveRenameChildren(child, index);
             }
         }
-        
+        [UsedImplicitly]
         private void OnGUI()
         {
             GUILayout.Label("Hierarchy Util", EditorStyles.boldLabel);
@@ -95,6 +120,7 @@ namespace Assets.Editor
                 EditorGUILayout.ObjectField("Selected object", t.gameObject, typeof(GameObject), true);
                 count = EditorGUILayout.IntField("Duplicate Count", count);
                 offset = EditorGUILayout.Vector2Field("Offset", offset);
+                dontAppendNewNumbers = EditorGUILayout.Toggle(new GUIContent("Don't Append New Numbers", "Only elements already ending in a number will be updated."), dontAppendNewNumbers);
                 if (count > 0 && GUILayout.Button("Duplicate"))
                 {
                     DuplicateObject(t.gameObject, count, offset);
